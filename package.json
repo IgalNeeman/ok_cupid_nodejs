@@ -1,0 +1,27 @@
+{
+  "name": "okcupid_nodejs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "igal neeman",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IgalNeeman/ok_cupid_nodejs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/IgalNeeman/ok_cupid_nodejs/issues"
+  },
+  "homepage": "https://github.com/IgalNeeman/ok_cupid_nodejs#readme",
+  "description": "",
+  "devDependencies": {
+    "puppeteer": "5.4.0"
+  },
+  "dependencies": {
+    "scanf": "1.1.2"
+  }
+}
