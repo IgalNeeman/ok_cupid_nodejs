@@ -42,24 +42,27 @@ let scanf = require('scanf');
         'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36'
         //'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1944.0 Safari/537.36'
     );
-
+    let msg=[];
     console.log('Welcome to IGN Automation!');
     console.log('What Do you What to do?');
 
     await page.waitForTimeout(1000)
     console.log('press 1 to use okcupid\n');
-    // choice = scanf('%d');
+     choice = scanf('%d');
+
+
     choice = 1
     switch(choice) {
         case 1:
             //fillip
-            console.log('to you what to continue any job number? from before? ');
-            // JobNumber = scanf('%d');
-            JobNumber = 0;
+            console.log('to you what to continue any job number? from before? 0 or 1? or 10 ? ');
+            JobNumber = scanf('%d');
+            console.log('what is the msg you want to send to all girl ?:)\n');
+            msg = scanf('%s');
 
             await loginofkcupid.oklogin(browser);
 
-            await getgirlsok.Getmygirls(browser, page,JobNumber);
+            await getgirlsok.Getmygirls(browser, page,JobNumber,msg);
 
             break;
 

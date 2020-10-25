@@ -24,7 +24,7 @@ async function autoScroll(page) {
 }
 
 module.exports = {
-    Getmygirls: async function (browser, page,JobNumber) {
+    Getmygirls: async function (browser, page,JobNumber,msg) {
         await page.setDefaultNavigationTimeout(0);
         try {
 
@@ -147,8 +147,8 @@ module.exports = {
                     // await page.keyboard.type(` היי ${nameofgirl}  `)
 //                await page.keyboard.type("\n")
                     await page.waitForTimeout(2000);
-                    // await page.keyboard.type(" נעים מאד, שמי יגאל בן 33 הנדסאי תוכנה ביום יום אני עוסק בפיתוח תוכנה בזמני הפנוי אני הולך לשחות וגם יודע לבשל אוכל טוב ..בקיצור ראיתי אותך באפליקציה  ומצאת חן בעיניי..  אשמח לשמוע ממך:)")
-                    await SENDMSG[0].type(" נעים מאד, שמי יגאל בן 33 הנדסאי תוכנה ביום יום אני עוסק בפיתוח תוכנה בזמני הפנוי אני הולך לשחות וגם יודע לבשל אוכל טוב ..בקיצור ראיתי אותך באפליקציה  ומצאת חן בעיניי..  אשמח לשמוע ממך:)")
+               //     await SENDMSG[0].type(" נעים מאד, שמי יגאל בן 33 הנדסאי תוכנה ביום יום אני עוסק בפיתוח תוכנה בזמני הפנוי אני הולך לשחות וגם יודע לבשל אוכל טוב ..בקיצור ראיתי אותך באפליקציה  ומצאת חן בעיניי..  אשמח לשמוע ממך:)")
+                    await SENDMSG[0].type(msg)
 
                     await page.waitForTimeout(5000);
 
