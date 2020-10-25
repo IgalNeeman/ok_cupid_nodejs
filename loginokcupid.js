@@ -19,7 +19,7 @@ module.exports = {
             // Set the seved cookies in the puppeteer browser page
 
             await page.setCookie(...cookies);
-            await page.goto("https://www.okcupid.com/login",{ waitUntil: 'networkidle2' });
+            await page.goto("https://www.okcupid.com/",{ waitUntil: 'networkidle2' });
 
             console.log('Login for okcupid by cookies Succsessfully!!')
             await page.waitForTimeout(5000);
@@ -34,12 +34,12 @@ module.exports = {
             //Click on Login button with gmail.
             await page.waitForTimeout(5000);
 
-            await page.click("login-actions-link");
 //cookies btn okcupid
             await page.waitForSelector("button#onetrust-accept-btn-handler");
             await page.click("button#onetrust-accept-btn-handler");
 //click login by facebook.
              await page.waitForSelector("button.login-actions-link");
+            await page.click("button.login-actions-link");
 
 
             await page.waitForTimeout(5000);
@@ -51,9 +51,9 @@ module.exports = {
             //FOCUS ON NEW TAB !! KUS EMEK!!!!!
             await pageList[pageList.length-1].bringToFront();
             await page.waitForTimeout(3000);
-            await pageList[pageList.length-1].waitForSelector('input[type="email"]');
+            await pageList[pageList.length-1].waitForSelector('input[type="text"]');
 
-            await pageList[pageList.length-1].type('input[type="email"]', creds.user);
+            await pageList[pageList.length-1].type('input[type="text"]', creds.user);
             await page.waitForTimeout(2000);
             //click submit
             await pageList[pageList.length-1].keyboard.press('Enter');
@@ -64,6 +64,9 @@ module.exports = {
             await pageList[pageList.length-1].type('input[type="password"]',creds.password);
             await page.waitForTimeout(2000);
             await pageList[pageList.length-1].keyboard.press('Enter');
+
+            //await page.click("button[type='submit']");
+
             await page.waitForTimeout(2000);
             await console.log("Login for okcupid Succsessfully!");
 

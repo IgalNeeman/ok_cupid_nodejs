@@ -1,11 +1,10 @@
 // const loginFillp = require('./fillip/LoginFillip');
 const loginofkcupid = require('./loginokcupid');
+const getgirlsok = require('./okcupidgetgirls');
 
 const puppeteer = require('puppeteer');
 
-
-
- const Creds = require('./creds.json');
+const Creds = require('./creds.json');
 let scanf = require('scanf');
 
 
@@ -15,7 +14,6 @@ let scanf = require('scanf');
     let choice;
 
     let JobNumber;
-
 
     const browser = await puppeteer.launch({
         executablePath: 'c:/chrome-win/chrome.exe',
@@ -50,16 +48,18 @@ let scanf = require('scanf');
 
     await page.waitForTimeout(1000)
     console.log('press 1 to use okcupid\n');
-    choice = scanf('%d');
+    // choice = scanf('%d');
+    choice = 1
     switch(choice) {
         case 1:
             //fillip
             console.log('to you what to continue any job number? from before? ');
-            JobNumber = scanf('%d');
+            // JobNumber = scanf('%d');
+            JobNumber = 0;
 
             await loginofkcupid.oklogin(browser);
 
-            // await getgirls.okcupid(browser, page,JobNumber);
+            await getgirlsok.Getmygirls(browser, page,JobNumber);
 
             break;
 
